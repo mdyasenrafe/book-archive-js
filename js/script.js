@@ -5,13 +5,14 @@ const loadData = () => {
   const showResultSection = document.getElementById("show-result-section");
   //when give empty value show alert
   if (searchTextValue === "") {
-    alert("please input a value");
+    alert("please give input text");
     showResultSection.innerText = "";
+    notFoundMessage("");
   }
   //sucess
   else {
     //api url  set
-    const url = `http://openlibrary.org/search.json?q=${searchTextValue}`;
+    const url = `https://openlibrary.org/search.json?q=${searchTextValue}`;
     //api call
     fetch(url)
       .then((res) => res.json())
@@ -67,6 +68,11 @@ const displayData = (details) => {
   }
   //error
   else {
-    alert("please input a correct text");
+    notFoundMessage("please give me right information");
   }
+};
+
+const notFoundMessage = (text) => {
+  const notFound = document.getElementById("not-found-message");
+  notFound.innerText = text;
 };

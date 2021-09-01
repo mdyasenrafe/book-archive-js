@@ -10,7 +10,7 @@ const loadData = () => {
   //when give empty value
   if (searchTextValue === "") {
     alert("please give me input text");
-    notFoundMessage("");
+    errorMessage("please give a value");
     totalSearchResult.innerText = "";
     showResultSection.textContent = "";
   }
@@ -37,7 +37,7 @@ const displayData = (details) => {
 
   //when find a vlaue
   if (details.numFound !== 0) {
-    notFoundMessage("");
+    errorMessage("");
     const docs = details.docs;
     const first20 = docs.slice(0, 20);
     //for each method
@@ -74,12 +74,12 @@ const displayData = (details) => {
   }
   //error
   else {
-    notFoundMessage("please give me right information");
+    errorMessage("please give me right information");
   }
 };
 
 //not found message function
-const notFoundMessage = (text) => {
-  const notFound = document.getElementById("not-found-message");
-  notFound.innerText = text;
+const errorMessage = (text) => {
+  const message = document.getElementById("not-found-message");
+  message.innerText = text;
 };

@@ -1,3 +1,4 @@
+// load data function
 const loadData = () => {
   //set var and get value seach text input
   const searchText = document.getElementById("searchText");
@@ -8,7 +9,7 @@ const loadData = () => {
 
   //when give empty value
   if (searchTextValue === "") {
-    alert("please give input text");
+    alert("please give me input text");
     notFoundMessage("");
     totalSearchResult.innerText = "";
     showResultSection.textContent = "";
@@ -25,7 +26,7 @@ const loadData = () => {
     searchText.value = "";
   }
 };
-
+// display data function
 const displayData = (details) => {
   const totalSearchResult = document.getElementById("total-search-result");
   const showResultSection = document.getElementById("show-result-section");
@@ -36,6 +37,7 @@ const displayData = (details) => {
 
   //when find a vlaue
   if (details.numFound !== 0) {
+    notFoundMessage("");
     const docs = details.docs;
     const first20 = docs.slice(0, 20);
     //for each method
@@ -76,6 +78,7 @@ const displayData = (details) => {
   }
 };
 
+//not found message function
 const notFoundMessage = (text) => {
   const notFound = document.getElementById("not-found-message");
   notFound.innerText = text;

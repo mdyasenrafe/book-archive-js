@@ -26,7 +26,7 @@ const displayData = (details) => {
   const totalValue = document.getElementById("total-value");
   const showResultSection = document.getElementById("show-result-section");
   //set value total search result
-  totalValue.innerText = `About ${details.numFound} results`;
+  totalValue.innerText = `total results ${details.numFound} found`;
   //clear text content
   showResultSection.textContent = "";
 

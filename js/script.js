@@ -2,12 +2,16 @@ const loadData = () => {
   //set var and get value seach text input
   const searchText = document.getElementById("searchText");
   const searchTextValue = searchText.value;
+  //set var show-result-sectiion and total search-result
+  const totalSearchResult = document.getElementById("total-search-result");
   const showResultSection = document.getElementById("show-result-section");
-  //when give empty value show alert
+
+  //when give empty value
   if (searchTextValue === "") {
     alert("please give input text");
-    showResultSection.innerText = "";
     notFoundMessage("");
+    totalSearchResult.innerText = "";
+    showResultSection.textContent = "";
   }
   //sucess
   else {
@@ -23,10 +27,10 @@ const loadData = () => {
 };
 
 const displayData = (details) => {
-  const totalValue = document.getElementById("total-value");
+  const totalSearchResult = document.getElementById("total-search-result");
   const showResultSection = document.getElementById("show-result-section");
   //set value total search result
-  totalValue.innerText = `total results ${details.numFound} found`;
+  totalSearchResult.innerText = `total results ${details.numFound} found`;
   //clear text content
   showResultSection.textContent = "";
 

@@ -49,7 +49,7 @@ const displayData = (details) => {
           alt="..."
          >
             <div class="card-body">
-              <h5 class="card-title">book Name : ${data.title}</h5>
+              <h5 class="card-title">Name : ${data.title}</h5>
               <p class="card-text">Author  Name : 
                 ${data.author_name ? data.author_name[0] : " "}
               </p>

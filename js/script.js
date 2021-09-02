@@ -39,6 +39,7 @@ const displayData = (details) => {
   if (details.numFound !== 0) {
     errorMessage("");
     const docs = details.docs;
+    //slice first 20
     const first20 = docs.slice(0, 20);
     //for each method
     first20.forEach((data) => {
@@ -63,7 +64,7 @@ const displayData = (details) => {
                 ${data.first_publish_year}
                </p>
                <p class="card-text">Publisher  : 
-                ${data.publisher ? data.publisher : "no found publish"}
+                ${data.publisher ? data.publisher : " "}
                </p>
             </div>
       </div>

@@ -60,11 +60,11 @@ const displayData = (details) => {
               <p class="card-text">Author  Name : 
                 ${data.author_name ? data.author_name[0] : " "}
               </p>
-               <p class="card-text">first Publishe Year : 
-                ${data.first_publish_year}
+               <p class="card-text">first Published Year : 
+                ${data.first_publish_year ? data.first_publish_year : " "}
                </p>
                <p class="card-text">Publisher  : 
-                ${data.publisher ? data.publisher : " "}
+                ${data.publisher ? data.publisher[0] : " "}
                </p>
             </div>
       </div>
